@@ -320,3 +320,37 @@ footer {
 .wa-icon {
   flex-shrink: 0;
 }
+/* Container de Informações do Desenvolvedor */
+.ft-content .dev-info {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  opacity: 0.85;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px; /* Espaçamento entre o seu nome e os ícones */
+}
+/* Container dos Links (Ícones) */
+.dev-links {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaçamento entre o ícone do GitHub e do LinkedIn */
+}
+
+/* Estilo individual de cada link de desenvolvedor */
+.dev-links a {
+  color: var(--mut); /* Usa a cor cinza discreta por padrão */
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+/* Efeito de hover nos ícones (Muda para laranja) */
+.dev-links a:hover {
+  color: var(--acc);
+}
+
+.dev-icon {
+  flex-shrink: 0;
+}
