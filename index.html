@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Termo de Autorização para Retirada de Mercadoria</title>
+    
+    <link rel="shortcut icon" href="assets/logo-mini.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="hd">
+            <img alt="Logo Distribuidora São Paulo" src="assets/logo.png" class="logo">
+            <div>
+                <b>EMISSÃO DE TERMO DE RETIRADA DE MATERIAL</b>
+                <span>Distribuidora São Paulo · CD Alça Viária</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>Termo de Autorização para Retirada de Mercadoria</h1>
+        <p class="sub">Preencha os dados, gere o PDF e assine no gov.br.</p>
+        
+        <div id="f"></div>
+        
+        <div class="bar">
+            <button class="pri" id="go" type="button">Gerar PDF</button>
+            <button class="sec" id="clr" type="button">Limpar</button>
+        </div>
+        
+        <div id="st" role="status"></div>
+        
+        <div class="steps">
+            <b>Depois de gerar:</b> abra o PDF no assinador do gov.br (assinador.iti.br), assine como titular da NF-e e envie o arquivo assinado à Distribuidora. A assinatura aparece apenas na via digital.
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
