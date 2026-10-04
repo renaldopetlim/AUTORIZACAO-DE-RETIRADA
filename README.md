@@ -1,51 +1,64 @@
-# 📄 Emissão de Termo de Retirada de Mercadoria
+# 📄 Gerador de Termo de Retirada de Mercadoria
 
-Um aplicativo web *front-end* responsivo criado para facilitar e padronizar a emissão de **Termos de Autorização para Retirada de Mercadorias** (especificamente para o CD Alça Viária). A ferramenta permite que o usuário preencha um formulário validado e gere automaticamente um documento em PDF pronto para assinatura digital via [gov.br](https://assinador.iti.br/) ou aprovação via WhatsApp.
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![jsPDF](https://img.shields.io/badge/jsPDF-Client_Side-success?style=for-the-badge)
+
+Uma aplicação web ágil e segura desenvolvida para a emissão de **Termos de Autorização para Retirada de Mercadoria**. Este sistema permite vincular um representante autorizado a uma Nota Fiscal Eletrônica (NF-e) específica, gerando automaticamente um documento PDF estruturado para controle logístico e comercial.
 
 ## ✨ Funcionalidades
 
-- **Geração de PDF Automática:** Utiliza a biblioteca `jsPDF` para desenhar o documento do zero, formatando textos, grades e adaptando dinamicamente a escala para garantir que o termo caiba perfeitamente em uma única página A4.
-- **Validação de Dados:** Máscaras automáticas e validação rigorosa com algoritmos reais para CPF e CNPJ.
-- **Formatação em Tempo Real:** Máscaras para placas de veículos (maiúsculas e hifens) e valores monetários (R$).
-- **Estrutura Baseada em Schema:** O formulário HTML é gerado dinamicamente via JavaScript através de uma estrutura de arrays (Schema), o que facilita a adição ou remoção de campos no futuro.
-- **Tema Claro/Escuro:** Suporte nativo a *Dark Mode* de acordo com as preferências do sistema operacional do usuário.
-- **Design Responsivo:** A interface se adapta perfeitamente a dispositivos móveis e desktops.
+* **Geração de PDF no Client-Side:** Utiliza a biblioteca [jsPDF](https://github.com/parallax/jsPDF) para montar o documento diretamente no navegador. O processamento local garante que dados sensíveis de clientes e notas fiscais não precisem transitar por servidores externos.
+* **Opções de Validação Flexíveis:** O termo gerado prevê espaço para assinatura eletrônica oficial via **gov.br** ou registro de confirmação direta via **WhatsApp**, adaptando-se ao fluxo de atendimento.
+* **Validações e Máscaras em Tempo Real:** 
+  * Validação algorítmica de CPFs e CNPJs.
+  * Formatação automática de moeda (R$) para o valor da nota fiscal.
+  * Aplicação de máscaras para placas de veículos e documentos.
+* **Suporte a Temas (Light / Dark Mode):** Interface responsiva que se adapta automaticamente às preferências de tema do sistema do usuário, proporcionando conforto visual.
+* **Layout Adaptável:** Construído com CSS Grid e Flexbox, garantindo usabilidade perfeita em desktops, tablets e smartphones (Mobile First).
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **HTML5:** Estrutura semântica e acessibilidade.
-- **CSS3 (Vanilla):** Variáveis de ambiente (`:root`), responsividade, suporte a temas (light/dark) e "safe areas" para dispositivos móveis.
-- **JavaScript (ES6+):** Lógica do formulário, validações, manipulação de DOM e injeção do PDF.
-- **[jsPDF](https://github.com/parallax/jsPDF):** Biblioteca externa carregada via CDN para a construção do arquivo PDF direto no navegador do cliente.
+O projeto foi desenvolvido utilizando tecnologias web fundamentais (Vanilla), com foco em performance e ausência de dependências complexas:
 
-## 🚀 Como executar o projeto
+* **HTML5:** Estrutura semântica e formulários acessíveis.
+* **CSS3:** Estilização baseada em variáveis (Custom Properties) para fácil manutenção e temas dinâmicos.
+* **JavaScript (ES6+):** Lógica de negócios, validação de inputs, formatação de dados e manipulação do DOM.
+* [**jsPDF (2.5.1)**](https://github.com/parallax/jsPDF)**:** Engine de geração do arquivo PDF.
 
-Como o projeto é construído usando tecnologias web padrão e não possui dependências de *back-end*, executá-lo é extremamente simples:
+## 🚀 Como Executar o Projeto
 
-1. Faça o clone deste repositório:
+Como a aplicação é estritamente *client-side* (Front-end), você não precisa configurar servidores ou bancos de dados.
+
+1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
+   git clone https://github.com/renaldopetlim/nome-do-seu-repositorio.git
    ```
-2. Navegue até a pasta do projeto.
-3. Abra o arquivo `index.html` em qualquer navegador web moderno (Chrome, Firefox, Edge, Safari).
-   *Ou, se preferir, sirva os arquivos através de um servidor local simples como o Live Server do VS Code.*
 
-## 📂 Estrutura de Arquivos
+2. **Acesse a pasta do projeto:**
+   ```bash
+   cd nome-do-seu-repositorio
+   ```
 
-- `index.html`: Estrutura principal da página, cabeçalho, rodapé e importação de scripts.
-- `style.css`: Estilização completa do projeto, definição de variáveis de cores e layout em *Grid*.
-- `script.js`: Coração da aplicação. Contém:
-  1. A definição do *Schema* dos campos.
-  2. Funções utilitárias (máscaras e tratamento de imagens).
-  3. Validadores de CPF e CNPJ.
-  4. Lógica de renderização da interface.
-  5. Função complexa de desenho do PDF (tabelas, fontes, layouts) com ajuste automático de escala.
-- `assets/`: Pasta recomendada para incluir a logo da empresa (`logo.png`) e o ícone da aba (`logo-mini.ico`).
+3. **Execute:**
+   Basta abrir o arquivo principal (`index_2.html` ou `index.html`) diretamente no seu navegador.
 
-## ✍️ Fluxo de Uso
+*💡 Pode ser facilmente hospedado em plataformas gratuitas de arquivos estáticos como GitHub Pages, Vercel ou Netlify.*
 
-1. O operador preenche os dados do Pedido, Cliente (Titular da NF-e) e Representante.
-2. O sistema acusa caso haja campos obrigatórios em branco ou se o CPF/CNPJ inserido for inválido.
-3. Ao clicar em **Gerar PDF**, o JavaScript compila os dados, converte a logo para Base64 e renderiza o layout do documento.
-4. O arquivo `.pdf` é baixado automaticamente no dispositivo com o nome padronizado.
-5. O PDF pode então ser enviado para o portal gov.br para assinatura eletrônica com validade jurídica.
+## 📋 Fluxo de Uso
+
+1. O usuário preenche os dados do **Cliente/Titular** (incluindo número do pedido, NF-e, orçamento e valor).
+2. Insere os dados do **Representante (Outorgado)** que fará a retirada (Nome, CPF, Cód. RCA e Placa do Veículo).
+3. Define as informações da **Retirada** (Data, Hora e Local).
+4. Opcionalmente, preenche os dados de confirmação via WhatsApp.
+5. Clica em **"Gerar PDF"**. O sistema checa a integridade dos dados e faz o download automático de um arquivo nomeado `Termo_Retirada_Pedido_[Numero].pdf`.
+6. O PDF gerado é enviado para assinatura eletrônica (gov.br) ou arquivado como comprovante de atendimento via WhatsApp.
+
+## 👨‍💻 Desenvolvedor
+
+Desenvolvido com dedicação por **Renaldo Petlim**.
+
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/renaldopetlim)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/renaldopetlim/)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/renaldopetlim/)
