@@ -256,3 +256,67 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   9. Rodapé (Footer)
+   ========================================================================== */
+footer {
+  max-width: 760px;
+  margin: 24px auto 16px;
+  padding: 20px 16px 0;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--mut);
+}
+.ft-content p {
+  margin: 6px 0;
+}
+.ft-content strong {
+  color: var(--ink);
+}
+.ft-content a {
+  color: var(--acc);
+  text-decoration: none;
+  font-weight: 600;
+}
+.ft-content a:hover {
+  text-decoration: underline;
+}
+.ft-content .dev-info {
+  margin-top: 16px;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+.ft-content a {
+  color: var(--acc);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex; /* Adicionado para alinhar o SVG com o texto */
+  align-items: center; /* Adicionado para alinhar o SVG com o texto */
+  gap: 4px; /* Espaço entre o ícone e o número */
+}
+/* Container Flex para alinhar toda a linha de suporte */
+.suporte-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px; /* Espaçamento entre os blocos de texto e links */
+  margin: 8px 0;
+}
+.suporte-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px; /* Espaçamento entre o ícone e o número */
+  color: var(--acc);
+  text-decoration: none;
+  font-weight: 600;
+}
+.suporte-row a:hover {
+  text-decoration: underline;
+}
+/* Garante que o ícone acompanhe o tamanho do texto */
+.wa-icon {
+  flex-shrink: 0;
+}
